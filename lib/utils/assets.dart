@@ -4,6 +4,7 @@ class FoodieAssets {
   static const foodieLogo = '$baseAssetPath/foodie_logo.png';
   static const bgSplash = '$baseAssetPath/bg_splash.png';
   static const bgWelcome = '$baseAssetPath/bg_welcome.png';
+  static const menu = '$baseAssetPath/menu.png';
   static const bank = '$baseAssetPath/bank.png';
   static const card = '$baseAssetPath/card.png';
   static const payPal = '$baseAssetPath/paypal.png';
@@ -25,6 +26,7 @@ class FoodieAssets {
   static const security = '$baseAssetPath/security.png';
   static const shoppingCart = '$baseAssetPath/shopping_cart.png';
   static const user = '$baseAssetPath/user.png';
+  static const account = '$baseAssetPath/account.png';
   static const foodOne = '$baseAssetPath/food_1.png';
   static const foodTwo = '$baseAssetPath/food_2.png';
   static const foodThree = '$baseAssetPath/food_3.png';

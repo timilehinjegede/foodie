@@ -6,6 +6,9 @@ ThemeData foodieTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   scaffoldBackgroundColor: bgColor,
   indicatorColor: primaryColor,
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: primaryColor,
+  ),
   tabBarTheme: TabBarTheme(
     labelColor: blackColor,
     unselectedLabelColor: greyColor,
@@ -55,6 +58,7 @@ const Color pinkColor = Color(0xffEB4796);
 const Color blueColor = Color(0xff0038FF);
 const Color bgColor = Color(0xffF2F2F2);
 const Color redColor = Colors.red;
+const Color transparentColor = Colors.transparent;
 
 // styles
 

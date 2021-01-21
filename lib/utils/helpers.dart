@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-const double horizontalPadding = 30.0;
-const double verticalPadding = 50.0;
-const double radius = 30.0;
-
 class FoodieHelpers {
   String validateEmail(String email) {}
 
