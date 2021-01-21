@@ -1,4 +1,4 @@
-# foodie
+# foodie (WIP)
 
 A new Flutter application.
 

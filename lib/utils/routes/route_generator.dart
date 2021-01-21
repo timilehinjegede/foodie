@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/ui/views/auth/auth_screen.dart';
+import 'package:foodie/ui/views/auth/welcome_screen.dart';
+import 'package:foodie/ui/views/dashboard/dashboard.dart';
 import 'package:foodie/ui/views/splash/splash_screen.dart';
 import 'package:foodie/utils/routes/route_names.dart';
 
@@ -11,11 +14,15 @@ class FoodieRoute {
         );
       case welcomeRoute:
         return FoodieFadeRoute(
-          screen: SplashScreen(),
+          screen: WelcomeScreen(),
         );
       case authRoute:
         return FoodieFadeRoute(
-          screen: SplashScreen(),
+          screen: AuthScreen(),
+        );
+      case dashboardRoute:
+        return FoodieFadeRoute(
+          screen: DashboardScreen(),
         );
       // no screen found
       default:
