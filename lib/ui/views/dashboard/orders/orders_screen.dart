@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
-class HistoryScreen extends StatelessWidget {
+class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(FoodieStrings.history),
+        title: Text(FoodieStrings.order),
         elevation: 0.0,
         backgroundColor: bgColor,
         textTheme: TextTheme(
@@ -27,18 +27,18 @@ class HistoryScreen extends StatelessWidget {
             children: [
               Spacer(),
               Image.asset(
-                FoodieAssets.noHistory,
+                FoodieAssets.shoppingCart,
               ),
               YBox(20),
               Text(
-                FoodieStrings.noHistory,
+                FoodieStrings.noOrder,
                 style: TextStyle(
                   fontSize: 28,
                 ),
               ),
               YBox(10),
               Text(
-                FoodieStrings.noHistoryHint,
+                FoodieStrings.noOrdersHint,
                 style: TextStyle(
                   fontSize: 17,
                   color: greyColor,

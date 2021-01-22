@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
-class HistoryScreen extends StatelessWidget {
+class OffersAndPromoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(FoodieStrings.history),
         elevation: 0.0,
         backgroundColor: bgColor,
-        textTheme: TextTheme(
-          headline6: Theme.of(context).textTheme.headline6.copyWith(
-                color: blackColor,
-              ),
-        ),
         iconTheme: IconThemeData(
           color: blackColor,
         ),
@@ -25,20 +18,22 @@ class HistoryScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
-              Image.asset(
-                FoodieAssets.noHistory,
-              ),
-              YBox(20),
               Text(
-                FoodieStrings.noHistory,
+                FoodieStrings.offersAndPromo,
+                style: TextStyle(
+                  fontSize: 34,
+                ),
+              ),
+              Spacer(),
+              Text(
+                FoodieStrings.noOffersAndPromo,
                 style: TextStyle(
                   fontSize: 28,
                 ),
               ),
               YBox(10),
               Text(
-                FoodieStrings.noHistoryHint,
+                FoodieStrings.noOffersAndPromoHint,
                 style: TextStyle(
                   fontSize: 17,
                   color: greyColor,
@@ -46,11 +41,6 @@ class HistoryScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Spacer(),
-              FoodieButton(
-                text: FoodieStrings.startOrdering,
-                onPressed: () {},
-              ),
-              YBox(40),
             ],
           ),
         ),
