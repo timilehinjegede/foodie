@@ -21,21 +21,21 @@ class OffersAndPromoScreen extends StatelessWidget {
               Text(
                 FoodieStrings.offersAndPromo,
                 style: TextStyle(
-                  fontSize: 34,
+                  fontSize: 30,
                 ),
               ),
               Spacer(),
               Text(
                 FoodieStrings.noOffersAndPromo,
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 25,
                 ),
               ),
               YBox(10),
               Text(
                 FoodieStrings.noOffersAndPromoHint,
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 15,
                   color: greyColor,
                 ),
                 textAlign: TextAlign.center,

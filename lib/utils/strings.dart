@@ -26,9 +26,12 @@ class FoodieStrings {
   static const String order = 'Orders';
   static const String history = 'History';
   static const String offersAndPromo = 'My Offers';
+  static const String favorites = 'My Favorites';
   static const String noOffersAndPromo = 'ohh snap!  No offers yet';
   static const String noOffersAndPromoHint =
-      'Bella dose’t have any offers\nyet please check again.';
+      'Foodie doesn\'t have any offers\nyet please check again.';
+  static const String noFavorites = 'ohh snap!  No favorites yet';
+  static const String noFavoritesHint = 'You haven\'t liked any product yet';
   static const String noHistory = 'No history yet';
   static const String noOrder = 'No orders yet';
   static const String noHistoryHint =
