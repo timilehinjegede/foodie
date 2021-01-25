@@ -18,13 +18,19 @@ class FoodieStrings {
   static const String phone = 'Phone Number';
   static const String password = 'Password';
 
+  static const String deliveryInfoHelper = 'Delivery info';
   static const String deliveryInfo =
       'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm';
+  static const String returnPolicyHelper = 'Return policy';
+
   static const String returnPolicy =
       'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.';
 
   static const String order = 'Orders';
   static const String history = 'History';
+  static const String profile = 'My Profile';
+  static const String information = 'Information';
+  static const String paymentMethod = 'Payment Method';
   static const String offersAndPromo = 'My Offers';
   static const String favorites = 'My Favorites';
   static const String noOffersAndPromo = 'ohh snap!  No offers yet';

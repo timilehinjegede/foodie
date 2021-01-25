@@ -83,63 +83,72 @@ class _FoodEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20.0),
-      child: Container(
-        height: 310,
-        width: 220,
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding / 2),
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 250,
-                width: 220,
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.circular(radius),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 30.0),
-                      blurRadius: 60,
-                      color: blackAccentColor.withOpacity(0.01),
+    return InkWell(
+      borderRadius: BorderRadius.circular(radius),
+      onTap: () => Navigator.pushNamed(
+        context,
+        foodDetailRoute,
+        arguments: {'food': food},
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: Container(
+          height: 310,
+          width: 220,
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding / 2),
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 250,
+                  width: 220,
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(radius),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 30.0),
+                        blurRadius: 60,
+                        color: blackAccentColor.withOpacity(0.01),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Image.asset(
+                food.assetSrc,
+                height: 240,
+                width: 240,
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: verticalPadding * 3, left: 5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      food.name,
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    YBox(20),
+                    Text(
+                      'N${food.price}',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: primaryColor,
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
-            Image.asset(
-              food.assetSrc,
-              height: 240,
-              width: 240,
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: verticalPadding * 3, left: 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    food.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  YBox(20),
-                  Text(
-                    'N${food.price}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
