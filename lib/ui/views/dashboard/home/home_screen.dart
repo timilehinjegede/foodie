@@ -84,50 +84,38 @@ class _FoodEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(radius),
+      splashColor: transparentColor,
+      highlightColor: transparentColor,
       onTap: () => Navigator.pushNamed(
         context,
         foodDetailRoute,
         arguments: {'food': food},
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 20.0),
-        child: Container(
-          height: 310,
-          width: 220,
-          padding: EdgeInsets.symmetric(horizontal: horizontalPadding / 2),
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 250,
-                  width: 220,
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.circular(radius),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 30.0),
-                        blurRadius: 60,
-                        color: blackAccentColor.withOpacity(0.01),
-                      ),
-                    ],
-                  ),
+      child: Container(
+        height: 310,
+        width: 220,
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding / 2),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 250,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: BorderRadius.circular(radius),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 30.0),
+                      blurRadius: 60,
+                      color: blackAccentColor.withOpacity(0.01),
+                    ),
+                  ],
                 ),
-              ),
-              Image.asset(
-                food.assetSrc,
-                height: 240,
-                width: 240,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(top: verticalPadding * 3, left: 5),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding / 2, vertical: 30),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       food.name,
@@ -136,7 +124,7 @@ class _FoodEntry extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    YBox(20),
+                    YBox(15),
                     Text(
                       'N${food.price}',
                       style: TextStyle(
@@ -147,8 +135,14 @@ class _FoodEntry extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Image.asset(
+              food.assetSrc,
+              height: 240,
+              width: 240,
+              fit: BoxFit.cover,
+            ),
+          ],
         ),
       ),
     );
