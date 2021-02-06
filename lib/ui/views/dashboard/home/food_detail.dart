@@ -5,8 +5,9 @@ import 'package:foodie/utils/utils.dart';
 
 class FoodDetail extends StatefulWidget {
   final Food food;
+  final String tag;
 
-  const FoodDetail({Key key, this.food}) : super(key: key);
+  const FoodDetail({Key key, this.food, this.tag}) : super(key: key);
 
   @override
   _FoodDetailState createState() => _FoodDetailState();
@@ -98,21 +99,24 @@ class _FoodDetailState extends State<FoodDetail> {
             SizedBox(
               height: 240,
               width: double.infinity,
-              child: PageView(
-                onPageChanged: (value) {
-                  setState(
-                    () => _currentPage = value,
-                  );
-                },
-                children: [
-                  ...List.generate(
-                    4,
-                    (index) => Image.asset(
-                      widget.food.assetSrc,
-                      fit: BoxFit.fitHeight,
+              child: Hero(
+                tag: widget.tag,
+                child: PageView(
+                  onPageChanged: (value) {
+                    setState(
+                      () => _currentPage = value,
+                    );
+                  },
+                  children: [
+                    ...List.generate(
+                      4,
+                      (index) => Image.asset(
+                        widget.food.assetSrc,
+                        fit: BoxFit.fitHeight,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
 

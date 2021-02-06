@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         .length,
                     (index) => _FoodEntry(
                       food: Food.foodList[index],
+                      tag: 'image_tag$index',
                     ),
                   ),
                 ],
@@ -78,8 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class _FoodEntry extends StatelessWidget {
   final Food food;
+  final String tag;
 
-  const _FoodEntry({Key key, this.food}) : super(key: key);
+  const _FoodEntry({Key key, this.food, this.tag}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class _FoodEntry extends StatelessWidget {
       onTap: () => Navigator.pushNamed(
         context,
         foodDetailRoute,
-        arguments: {'food': food},
+        arguments: {'food': food, 'tag': tag},
       ),
       child: Container(
         height: 310,
@@ -136,11 +138,14 @@ class _FoodEntry extends StatelessWidget {
                 ),
               ),
             ),
-            Image.asset(
-              food.assetSrc,
-              height: 240,
-              width: 240,
-              fit: BoxFit.cover,
+            Hero(
+              tag: tag,
+              child: Image.asset(
+                food.assetSrc,
+                height: 240,
+                width: 240,
+                fit: BoxFit.cover,
+              ),
             ),
           ],
         ),

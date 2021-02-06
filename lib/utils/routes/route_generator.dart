@@ -46,6 +46,7 @@ class FoodieRoute {
         return FoodieFadeRoute(
           screen: FoodDetail(
             food: arguments['food'],
+            tag: arguments['tag'],
           ),
         );
       // no screen found
@@ -73,10 +74,11 @@ class FoodieFadeRoute extends PageRouteBuilder {
   FoodieFadeRoute({this.screen})
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => screen,
-          transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-              FadeTransition(
-            opacity: animation,
-            child: child,
-          ),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
         );
 }
