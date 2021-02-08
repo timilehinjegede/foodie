@@ -26,6 +26,7 @@ class FoodieStrings {
   static const String returnPolicy =
       'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.';
 
+  static const String signOut = 'Sign-out';
   static const String order = 'Orders';
   static const String history = 'History';
   static const String profile = 'My Profile';

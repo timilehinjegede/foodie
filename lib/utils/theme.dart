@@ -60,6 +60,7 @@ const Color bgColor = Color(0xffF2F2F2);
 const Color redColor = Colors.red;
 const Color transparentColor = Colors.transparent;
 const Color blackAccentColor = Color(0xff393939);
+const Color shadowColor = Color(0xffF96C3B);
 // styles
 
 // fonts
