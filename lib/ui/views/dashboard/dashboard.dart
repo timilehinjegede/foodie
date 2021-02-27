@@ -15,18 +15,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
   bool _isDrawerOpen = false;
   int _currentIndex = 0;
 
-  Matrix4 _getContainerMatrix() {
-    return Matrix4.identity()
-      ..translate(220.0, _deviceUtil.screenHeight(extent: 0.13))
-      ..scale(0.7);
-  }
-
-  Matrix4 _getEmptyContainerMatrix() {
-    return Matrix4.identity()
-      ..translate(195.0, _deviceUtil.screenHeight(extent: 0.19))
-      ..scale(0.68);
-  }
-
   @override
   Widget build(BuildContext context) {
     _deviceUtil = DeviceUtil(context);
@@ -38,14 +26,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
         // ===== Transparent widget stacked behind the DashboardView =====
         AnimatedContainer(
           duration: Duration(milliseconds: 500),
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
+          height: _deviceUtil.screenHeight(),
+          width: _deviceUtil.screenWidth(),
           decoration: BoxDecoration(
             color: shadowColor,
             borderRadius: BorderRadius.circular(radius),
           ),
-          transform:
-              _isDrawerOpen ? _getEmptyContainerMatrix() : Matrix4.identity(),
+          transform: _isDrawerOpen
+              ? FoodieHelpers.shadowMatrix4(context)
+              : Matrix4.identity(),
         ),
 
         // ===== Dashboard View =====
@@ -55,8 +44,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           child: AnimatedContainer(
             duration: Duration(milliseconds: 500),
-            transform:
-                _isDrawerOpen ? _getContainerMatrix() : Matrix4.identity(),
+            transform: _isDrawerOpen
+                ? FoodieHelpers.dashboardMatrix4(context)
+                : Matrix4.identity(),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(radius),
               child: AbsorbPointer(
@@ -102,6 +92,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               : Brightness.light,
                         )
                       : null,
+
                   bottomNavigationBar: BottomNavigationBar(
                     currentIndex: _currentIndex,
                     onTap: (index) {
