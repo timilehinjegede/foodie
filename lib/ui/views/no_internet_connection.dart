@@ -1,48 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
-class FavoritesScreen extends StatelessWidget {
+class NoInternetConnection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: bgColor,
-        iconTheme: IconThemeData(
-          color: blackColor,
-        ),
-      ),
       body: SizedBox.expand(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  FoodieStrings.favorites,
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
-              ),
               Spacer(),
+              Image.asset(
+                FoodieAssets.noInternet,
+              ),
+              YBox(20),
               Text(
-                FoodieStrings.noFavorites,
+                FoodieStrings.noInternet,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 28,
                 ),
-                textAlign: TextAlign.center,
               ),
               YBox(10),
               Text(
-                FoodieStrings.noFavoritesHint,
+                FoodieStrings.noInternetHint,
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 17,
                   color: greyColor,
                 ),
                 textAlign: TextAlign.center,
+              ),
+              YBox(50),
+              FoodieButton(
+                text: FoodieStrings.tryAgain,
+                onPressed: () {},
               ),
               Spacer(),
             ],

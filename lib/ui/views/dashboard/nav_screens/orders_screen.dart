@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
-class FavoritesScreen extends StatelessWidget {
+class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(FoodieStrings.order),
         elevation: 0.0,
         backgroundColor: bgColor,
+        textTheme: TextTheme(
+          headline6: Theme.of(context).textTheme.headline6.copyWith(
+                color: blackColor,
+              ),
+        ),
         iconTheme: IconThemeData(
           color: blackColor,
         ),
@@ -18,33 +25,32 @@ class FavoritesScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  FoodieStrings.favorites,
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
-              ),
               Spacer(),
+              Image.asset(
+                FoodieAssets.shoppingCart,
+              ),
+              YBox(20),
               Text(
-                FoodieStrings.noFavorites,
+                FoodieStrings.noOrder,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 28,
                 ),
-                textAlign: TextAlign.center,
               ),
               YBox(10),
               Text(
-                FoodieStrings.noFavoritesHint,
+                FoodieStrings.noOrdersHint,
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 17,
                   color: greyColor,
                 ),
                 textAlign: TextAlign.center,
               ),
               Spacer(),
+              FoodieButton(
+                text: FoodieStrings.startOrdering,
+                onPressed: () {},
+              ),
+              YBox(40),
             ],
           ),
         ),

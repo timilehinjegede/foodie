@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
@@ -7,59 +8,62 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
-      child: Scaffold(
-        body: Column(
-          children: [
-            Expanded(
-              flex: 3,
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 4.0),
-                      blurRadius: 30.0,
-                      color: blackColor.withOpacity(0.06),
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.dark,
+        child: Scaffold(
+          body: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 4.0),
+                        blurRadius: 30.0,
+                        color: blackColor.withOpacity(0.06),
+                      ),
+                    ],
+                    color: whiteColor,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(radius),
+                      bottomRight: Radius.circular(radius),
                     ),
-                  ],
-                  color: whiteColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(radius),
-                    bottomRight: Radius.circular(radius),
+                  ),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: horizontalPadding + 10),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Image.asset(FoodieAssets.foodieLogo),
+                      ),
+                      TabBar(
+                        tabs: [
+                          Tab(
+                            text: FoodieStrings.login,
+                          ),
+                          Tab(
+                            text: FoodieStrings.signUp,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-                padding:
-                    EdgeInsets.symmetric(horizontal: horizontalPadding + 10),
-                child: Column(
+              ),
+              YBox(30),
+              Expanded(
+                flex: 4,
+                child: TabBarView(
                   children: [
-                    Expanded(
-                      child: Image.asset(FoodieAssets.foodieLogo),
-                    ),
-                    TabBar(
-                      tabs: [
-                        Tab(
-                          text: FoodieStrings.login,
-                        ),
-                        Tab(
-                          text: FoodieStrings.signUp,
-                        ),
-                      ],
-                    ),
+                    _LogInSection(),
+                    _SignUpSection(),
                   ],
                 ),
               ),
-            ),
-            YBox(30),
-            Expanded(
-              flex: 4,
-              child: TabBarView(
-                children: [
-                  _LogInSection(),
-                  _SignUpSection(),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -107,7 +111,8 @@ class _LogInSection extends StatelessWidget {
             YBox(50),
             FoodieButton(
               text: FoodieStrings.login,
-              onPressed: () => Navigator.pushNamedAndRemoveUntil(context, dashboardRoute, (route) => false),
+              onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context, dashboardRoute, (route) => false),
             ),
           ],
         ),
@@ -157,7 +162,8 @@ class _SignUpSection extends StatelessWidget {
             YBox(50),
             FoodieButton(
               text: FoodieStrings.signUp,
-              onPressed: () => Navigator.pushNamedAndRemoveUntil(context, dashboardRoute, (route) => false),
+              onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context, dashboardRoute, (route) => false),
             ),
           ],
         ),

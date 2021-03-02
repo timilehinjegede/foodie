@@ -5,6 +5,7 @@ import 'package:foodie/ui/views/dashboard/account/account_screen.dart';
 import 'package:foodie/ui/views/dashboard/dashboard.dart';
 import 'package:foodie/ui/views/dashboard/favorites/favorites_screen.dart';
 import 'package:foodie/ui/views/dashboard/history/history_screen.dart';
+import 'package:foodie/ui/views/dashboard/home/food_detail.dart';
 import 'package:foodie/ui/views/splash/splash_screen.dart';
 import 'package:foodie/utils/routes/route_names.dart';
 
@@ -39,6 +40,15 @@ class FoodieRoute {
         return FoodieFadeRoute(
           screen: HistoryScreen(),
         );
+      case foodDetailRoute:
+        Map arguments = routeSettings.arguments;
+
+        return FoodieFadeRoute(
+          screen: FoodDetail(
+            food: arguments['food'],
+            tag: arguments['tag'],
+          ),
+        );
       // no screen found
       default:
         return MaterialPageRoute(
@@ -64,10 +74,11 @@ class FoodieFadeRoute extends PageRouteBuilder {
   FoodieFadeRoute({this.screen})
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => screen,
-          transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-              FadeTransition(
-            opacity: animation,
-            child: child,
-          ),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
         );
 }

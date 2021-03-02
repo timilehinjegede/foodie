@@ -9,6 +9,14 @@ const double horizontalPadding = 30.0;
 const double verticalPadding = 50.0;
 const double radius = 30.0;
 
+const List<String> drawerItems = [
+  'Profile',
+  'Orders',
+  'Offers and Promo',
+  'Privacy Policy',
+  'Security'
+];
+
 const List<String> tabBarTitle = [
   'Foods',
   'Drinks',

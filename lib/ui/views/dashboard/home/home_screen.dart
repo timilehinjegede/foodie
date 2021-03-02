@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         .length,
                     (index) => _FoodEntry(
                       food: Food.foodList[index],
+                      tag: 'image_tag$index',
                     ),
                   ),
                 ],
@@ -78,13 +79,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class _FoodEntry extends StatelessWidget {
   final Food food;
+  final String tag;
 
-  const _FoodEntry({Key key, this.food}) : super(key: key);
+  const _FoodEntry({Key key, this.food, this.tag}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20.0),
+    return InkWell(
+      splashColor: transparentColor,
+      highlightColor: transparentColor,
+      onTap: () => Navigator.pushNamed(
+        context,
+        foodDetailRoute,
+        arguments: {'food': food, 'tag': tag},
+      ),
       child: Container(
         height: 310,
         width: 220,
@@ -95,7 +103,6 @@ class _FoodEntry extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 height: 250,
-                width: 220,
                 decoration: BoxDecoration(
                   color: whiteColor,
                   borderRadius: BorderRadius.circular(radius),
@@ -107,36 +114,37 @@ class _FoodEntry extends StatelessWidget {
                     ),
                   ],
                 ),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding / 2, vertical: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      food.name,
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    YBox(15),
+                    Text(
+                      'N${food.price}',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: primaryColor,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            Image.asset(
-              food.assetSrc,
-              height: 240,
-              width: 240,
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: verticalPadding * 3, left: 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    food.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  YBox(20),
-                  Text(
-                    'N${food.price}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
+            Hero(
+              tag: tag,
+              child: Image.asset(
+                food.assetSrc,
+                height: 240,
+                width: 240,
+                fit: BoxFit.cover,
               ),
             ),
           ],

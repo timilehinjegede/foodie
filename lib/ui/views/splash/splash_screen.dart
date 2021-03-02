@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:foodie/utils/utils.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,57 +28,60 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(FoodieAssets.bgSplash),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Center(
-            child: Container(
-              height: 220,
-              width: 220,
-              decoration: BoxDecoration(
-                color: whiteColor,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 50.0,
-                    color: blackColor.withOpacity(0.15),
-                  ),
-                ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        body: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(FoodieAssets.bgSplash),
+                fit: BoxFit.cover,
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    FoodieAssets.foodieLogo,
-                    fit: BoxFit.cover,
-                    height: 100,
-                    width: 100,
-                  ),
-                  Text(
-                    FoodieStrings.sCText,
-                    style: TextStyle(
-                      color: primaryColor,
+            ),
+            child: Center(
+              child: Container(
+                height: 220,
+                width: 220,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 10),
+                      blurRadius: 50.0,
+                      color: blackColor.withOpacity(0.15),
                     ),
-                  ),
-                  YBox(10),
-                  SizedBox(
-                    width: 27,
-                    height: 27,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation(primaryColor),
-                      strokeWidth: 1.5,
+                  ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      FoodieAssets.foodieLogo,
+                      fit: BoxFit.cover,
+                      height: 100,
+                      width: 100,
                     ),
-                  ),
-                ],
+                    Text(
+                      FoodieStrings.sCText,
+                      style: TextStyle(
+                        color: primaryColor,
+                      ),
+                    ),
+                    YBox(10),
+                    SizedBox(
+                      width: 27,
+                      height: 27,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation(primaryColor),
+                        strokeWidth: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
