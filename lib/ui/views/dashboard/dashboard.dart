@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie/ui/widgets/widgets.dart';
 import 'package:foodie/utils/utils.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -48,7 +45,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ? FoodieHelpers.dashboardMatrix4(context)
                 : Matrix4.identity(),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(radius),
+              borderRadius: _isDrawerOpen
+                  ? BorderRadius.circular(radius)
+                  : BorderRadius.zero,
               child: AbsorbPointer(
                 absorbing: _isDrawerOpen ? true : false,
                 child: Scaffold(
@@ -92,7 +91,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               : Brightness.light,
                         )
                       : null,
-
                   bottomNavigationBar: BottomNavigationBar(
                     currentIndex: _currentIndex,
                     onTap: (index) {
