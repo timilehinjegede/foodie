@@ -1,6 +1,24 @@
 # foodie (WIP)
 
-A new Flutter application.
+A food oerdeing application built with Flutte.
+
+Link to Design on [Figma](https://www.uplabs.com/posts/e-commerce-app-interface-for-furniture) by [Marvis Dosa](https://dribbble.com/marv_arts)
+
+## Screenshots
+
+<img src="graphics/banner_1.png"> 
+
+<img src="graphics/banner_2.png">
+
+<img src="graphics/splash.png" width="400"> | <img src="graphics/welcome.png" width="400">
+
+<img src="graphics/login.png" width="400"> | <img src="graphics/signup.png" width="400">
+
+<img src="graphics/home.png" width="400"> | <img src="graphics/food.png" width="400">
+
+<img src="graphics/drawer.png" width="400"> | <img src="graphics/favourites.png" width="400">
+
+<img src="graphics/profile.png" width="400"> | <img src="graphics/history.png" width="400">
 
 ## Getting Started
 
