@@ -12,6 +12,7 @@ class FoodieButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     return FlatButton(
       onPressed: onPressed,
       height: 65,
