@@ -1,8 +1,10 @@
-# foodie (WIP)
+# Foodie
 
-A food oerdeing application built with Flutte.
+A food ordering application built with Flutter.
 
-Link to Design on [Figma](https://www.uplabs.com/posts/e-commerce-app-interface-for-furniture) by [Marvis Dosa](https://dribbble.com/marv_arts)
+## Inspiration
+
+Link to Design on [Figma](https://www.figma.com/community/file/893381127703378146) by [Marvis Dosa](https://www.figma.com/@marvisighedosas)
 
 ## Screenshots
 
@@ -10,25 +12,30 @@ Link to Design on [Figma](https://www.uplabs.com/posts/e-commerce-app-interface-
 
 <img src="graphics/banner_2.png">
 
-<img src="graphics/splash.png" width="400"> | <img src="graphics/welcome.png" width="400">
 
-<img src="graphics/login.png" width="400"> | <img src="graphics/signup.png" width="400">
+| Splash Screen | Get Started Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/splash.png" width="500">   | <img src="graphics/welcome.png" width="500">   |
 
-<img src="graphics/home.png" width="400"> | <img src="graphics/food.png" width="400">
+| Log In Screen | Sign Up Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/login.png" width="500">   | <img src="graphics/signup.png" width="500">   |
 
-<img src="graphics/drawer.png" width="400"> | <img src="graphics/favourites.png" width="400">
+| Home Screen | Food Details Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/home.png" width="500">   | <img src="graphics/food.png" width="500">   |
 
-<img src="graphics/profile.png" width="400"> | <img src="graphics/history.png" width="400">
+| Drawer Screen | Favourites Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/drawer.png" width="500">   | <img src="graphics/favourites.png" width="500">   |
 
-## Getting Started
+| Profile Screen | History Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/profile.png" width="500">   | <img src="graphics/history.png" width="500">   |
 
-This project is a starting point for a Flutter application.
+## Contributions
 
-A few resources to get you started if this is your first Flutter project:
+Feel free to contribute to this project.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you find a bug or want a feature, but don't know how to fix/implement it, please fill an [issue](https://github.com/timilehinjegede/foodie/issues).
+If you fixed a bug or implemented a feature, please send a [pull request](https://github.com/timilehinjegede/foodie/pulls).

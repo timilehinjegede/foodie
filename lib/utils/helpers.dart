@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class FoodieHelpers {
-  String validateEmail(String email) {}
+  String validateEmail(String email) => '';
 
-  String checkEmptyFields(String fieldValue) {}
+  String checkEmptyFields(String fieldValue) => '';
 
   static Matrix4 dashboardMatrix4(BuildContext context) {
     final DeviceUtil deviceUtil = DeviceUtil(context);
